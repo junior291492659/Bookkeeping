@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 15px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background:#eee;
+}
+
+a{
+  text-decoration: none;
+  color: #6F7072;
+}
+ul{
+  list-style: none;
+}
+

@@ -1,0 +1,23 @@
+@media only screen and (max-width:300px) {
+    :root {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    :root {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width:960px) {
+    :root {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    :root {
+        font-size: 25px;
+    }
+}
