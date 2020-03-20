@@ -7,10 +7,8 @@ import ExpensesEdit from '@/components/Expenses/ExpensesEdit'
 import ExpenseCategoryAdd from '@/components/category/ExpenseCategoryAdd'
 import ExpenseCategoryEdit from '@/components/category/expenseCategoryEdit'
 import Login from '@/views/Login'
-// import LoginNew from '@/views/LoginNew'
 import store from '@/store'
 
-import Test from '@/views/TestChart'
 
 Vue.use(Router)
 
@@ -63,16 +61,6 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
-    },
-    {
-      path: '/test',
-      name: 'test',
-      component: Test
-    },
-    // {
-    //   path: '/loginNew',
-    //   name: 'loginNew',
-    //   component: LoginNew
-    // }
+    }
   ]
 })

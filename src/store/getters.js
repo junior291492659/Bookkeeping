@@ -1,5 +1,4 @@
 import dateManager from "../util.js/date";
-import oneExpense from "../util.js/oneExpense";
 const getters = {
   cartList(state) {
     return state.cartList;
