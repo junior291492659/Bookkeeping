@@ -12,7 +12,7 @@ const mutations = {
     sessionStorage.removeItem("token");
   },
   initStore(state, payload) {
-    console.log("在 initStore中");
+    // console.log("在 initStore中");
     // console.log(payload.category);
     state.category = payload.category;
     state.expenses = payload.expenses;
@@ -24,12 +24,12 @@ const mutations = {
     state.category.splice(state.category.length, 0, plus[0]);
   },
   getMoreExpense(state, payload) {
-    console.log("在 getMoreExpense");
-    console.log(payload);
+    // console.log("在 getMoreExpense");
+    // console.log(payload);
     payload.expenses.forEach(item => {
       let index = state.expenses.findIndex(cur => cur.date == item.date);
       if(index != -1){
-        console.log("找到了重复的日期。。。。。。");
+        // console.log("找到了重复的日期。。。。。。");
         state.expenses.splice(index, 1, item);
       }else{
         state.expenses.push(item);
@@ -50,11 +50,11 @@ const mutations = {
     }
   },
   changeOneExpense(state, payload) {
-    console.log(payload.oldDate, payload.newDate);
+    // console.log(payload.oldDate, payload.newDate);
     // console.log(payload.oldId);
     if (payload.oldDate == payload.newDate) {
       //没有修改日期的情况
-      console.log("没有修改日期");
+      // console.log("没有修改日期");
       let dayExpenses = state.expenses.find(
         item => item.date == payload.oldDate
       );
@@ -64,7 +64,7 @@ const mutations = {
       dayExpenses.list.splice(index, 1, payload.oneExpenseData);
     } else {
       //修改了日期的情况
-      console.log("日期被修改了");
+      // console.log("日期被修改了");
       let dayExpenses = state.expenses.find(
         item => item.date == payload.oldDate
       );
@@ -85,7 +85,7 @@ const mutations = {
       dayExpenses = state.expenses.find(item => item.date == payload.newDate);
       if (!dayExpenses) {
         //如果该日期原本就没有任何条目，新建一个
-        console.log("新建了一个");
+        // console.log("新建了一个");
         state.expenses.push({
           date: payload.newDate,
           list: [payload.oneExpenseData]
@@ -99,19 +99,19 @@ const mutations = {
       position: "bottom",
       duration: 2000
     });
-    console.log("end of change");
-    console.dir(state.expenses);
+    // console.log("end of change");
+    // console.dir(state.expenses);
   },
 
   removeOneExpense(state, payload) {
-    console.log(payload.date, payload.id);
+    // console.log(payload.date, payload.id);
     let dayExpenses = state.expenses.find(item => item.date == payload.date);
     let index = dayExpenses.list.findIndex(item => item.id == payload.id);
-    console.log(index);
+    // console.log(index);
     dayExpenses.list.splice(index, 1);
 
     if (dayExpenses.list.length == 0) {
-      console.log("删除了一个");
+      // console.log("删除了一个");
       let index = state.expenses.findIndex(item => item.date == payload.date);
       state.expenses.splice(index, 1);
     }
@@ -134,7 +134,7 @@ const mutations = {
     } else {
       dayExpenses.list.push(payload.expenseData);
     }
-    console.log("end of add");
+    // console.log("end of add");
     Toast({
       message: "添加成功",
       position: "bottom",
@@ -162,7 +162,7 @@ const mutations = {
 
   removeCategory(state, payload) {
     //payload: name
-    console.log("in remove...", payload);
+    // console.log("in remove...", payload);
     state.category.splice(
       state.category.findIndex(item => item.name == payload),
       1
@@ -171,10 +171,10 @@ const mutations = {
     let toRemoveDate = []; //记录被删除玩记录后该天没有任何记录的日期再进行删除
     state.expenses.forEach(item => {
       let index = item.list.findIndex(listItem => listItem.name == payload);
-      console.log("before while", index);
+      // console.log("before while", index);
       while (index !== -1) {
-        console.log("in while");
-        console.log(index);
+        // console.log("in while");
+        // console.log(index);
         item.list.splice(index, 1);
         index = item.list.findIndex(listItem => listItem.name == payload);
       } //end of while

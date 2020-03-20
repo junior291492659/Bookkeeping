@@ -15,7 +15,6 @@ import { MessageBox } from "mint-ui";
 export default {
   name: "App",
   created() {
-    console.log("根组件被创建了");
     //检测token是否有效
     if (this.$route.path != "/login") {
       checkLogin()

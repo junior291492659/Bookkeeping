@@ -1,7 +1,7 @@
 import service from "./index";
 
 export function addOneExpenseToServer(data) {
-  console.log("in addOneExpense api");
+  // console.log("in addOneExpense api");
   return service
     .request({
       method: "post",
@@ -13,7 +13,7 @@ export function addOneExpenseToServer(data) {
 
 //初始化数据
 export function initExpenseFromServer() {
-  console.log("in initExpenseFromServer api");
+  // console.log("in initExpenseFromServer api");
   return service
     .request({
       method: "get",
@@ -24,7 +24,7 @@ export function initExpenseFromServer() {
 
 //增加新数据
 export function getMoreExpenseFromServer(data){
-  console.log(data);
+  // console.log(data);
   return service
   .request({
     method: "get",

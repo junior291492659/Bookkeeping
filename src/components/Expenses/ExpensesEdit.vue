@@ -120,7 +120,7 @@ export default {
       // );
     },
     changeCategory(name, color) {
-      console.log(name, color);
+      // console.log(name, color);
       if (name != "+") {
         this.expenseData.name = name;
         this.expenseData.color = color;
@@ -133,7 +133,7 @@ export default {
       let oldId = this.$route.params.id;
       this.expenseData.id = this.createNewId();
       this.expenseData.amount *= 1;
-      console.log(document.querySelector(".current"));
+      // console.log(document.querySelector(".current"));
       let currentCate = document.querySelector(".current");
       this.expenseData.name = currentCate.getAttribute("name");
       this.expenseData.color = currentCate.getAttribute("color");
@@ -161,7 +161,7 @@ export default {
       this.$router.back(-1);
     },
     remove() {
-      console.log("remove in edit");
+      // console.log("remove in edit");
       MessageBox.confirm("您确定要删除？")
         .then(action => {
           let payload = {
@@ -170,7 +170,7 @@ export default {
           };
           this.$store.commit("removeOneExpense", payload);
           this.$store.dispatch("removeOneExpense", payload);
-          console.log("before back");
+          // console.log("before back");
           this.$router.go(-1);
         })
         .catch(cancel => {});

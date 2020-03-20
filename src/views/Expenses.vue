@@ -104,8 +104,6 @@ export default {
       done();
     },
     login() {
-      // console.log("login");
-      // console.log(this.getToken);
       if (this.getToken) {
         this.$refs.drawer.handleClose();
         Toast({
@@ -130,10 +128,6 @@ export default {
     changeCateType(cate) {
       this.type = this.type != cate ? cate : this.type;
     }
-  },
-  created() {
-    // console.log("Expense又被创建了");
-    // this.tab = this.$store.getters.getTab;
   },
   computed: {
     currentComponent() {

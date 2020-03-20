@@ -2,7 +2,7 @@ import service from "./index";
 
 //注册
 export function register(data) {
-  console.log("in register api");
+  // console.log("in register api");
   return service
     .request({
       method: "post",
@@ -14,7 +14,7 @@ export function register(data) {
 
 //登录
 export function login(data) {
-  console.log("in login api");
+  // console.log("in login api");
   return service.request({
       method:"post",
       url:"/login",
@@ -24,7 +24,7 @@ export function login(data) {
 
 //检测token是否有效
 export function checkLogin() {
-  console.log("in checkLogin api");
+  // console.log("in checkLogin api");
   return service
     .request({
       method: "get",

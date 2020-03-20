@@ -270,7 +270,7 @@ export default {
                 responsive: true,
                 maintainAspectRatio: false
               };
-              console.log("在成功获取数据的时候了");
+              // console.log("在成功获取数据的时候了");
               this.loaded = true;
             } else {
               //errCode:400  没找到指定日期范围的记录
@@ -290,7 +290,7 @@ export default {
             });
           });
       } catch (error) {
-        console.log("in chart error");
+        // console.log("in chart error");
         console.log(error);
       }
     },
@@ -315,12 +315,12 @@ export default {
               let showData = result.everyday;
               this.totalAmount = result.totalAmount;
               this.mydata = JSON.parse(JSON.stringify(showData));
-              console.log(this.mydata);
+              // console.log(this.mydata);
               this.options = {
                 responsive: true,
                 maintainAspectRatio: false
               };
-              console.log("在成功获取数据的时候了");
+              // console.log("在成功获取数据的时候了");
               this.loaded = true;
             } else {
               //errCode:400  没找到指定日期范围的记录
@@ -397,9 +397,9 @@ export default {
     },
     type(newVal) {
       // console.log("watch timetype", newVal);
-      console.log("watch type......");
-      console.log(this.type, newVal);
-      console.log(this.timeType);
+      // console.log("watch type......");
+      // console.log(this.type, newVal);
+      // console.log(this.timeType);
       this.initTime();
       switch (newVal) {
         case "category":
@@ -575,65 +575,3 @@ export default {
   }
 }
 </style>
-
- // {
-    //   labels: ["January", "February", "March", "March"],
-    //   datasets: [
-    //     {
-    //       label: "Data One",
-    //       backgroundColor: ["#f87979", "#3498db", "#9b59b6"],
-    //       data: [40, 20, 10, 0]
-    //     }
-    //   ]
-    // };
-    // this.mydata = JSON.parse(JSON.stringify(showData));
-    // console.log(this.mydata);
-    // this.options = {
-    //   responsive: true,
-    //   maintainAspectRatio: false
-    // };
-    // this.loaded = true;
-
-    // console.log("here....");
-    // console.log(
-    //   moment("2020-3-1", "YYYY-M-D")
-    //     .add(3, "days")
-    //     .format("YYYY-M-D")
-    // );
-
-    // console.log(
-    //   moment("2020-2-14", "YYYY-M-D")
-    //     .endOf("month")
-    //     .format("YYYY-M-D")
-    // );
-
-    // let weekNumber = moment("2019-12-30", "YYYY-M-D").isoWeeks();
-    // console.log(weekNumber);
-
-    // console.log(
-    //   moment()
-    //     .isoWeeks(2)
-    //     .startOf("isoWeek")
-    //     .format("YYYY-M-D")
-    // );
-    // console.log(moment("2020", "YYYY").isoWeek());
-    // console.log(
-    //   moment("2020", "YYYY")
-    //     .isoWeek(1)
-    //     .startOf("isoWeek")
-    //     .format("YYYY-M-D")
-    // );
-
-    // console.log(
-    //   moment("2020", "YYYY")
-    //     .startOf("year")
-    //     .format("YYYY-M-D")
-    // );
-    // console.log(
-    //   moment("2020", "YYYY")
-    //     .endOf("year")
-    //     .format("YYYY-M-D")
-    // );
-    // console.log(2019 + "-1-1");
-
-    // console.log(moment().format("w"));

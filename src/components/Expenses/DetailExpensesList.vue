@@ -55,7 +55,7 @@ export default {
   },
   methods:{
     toggleEdit(id){
-      console.log("to Edit");
+      // console.log("to Edit");
       // console.log(id);
       // console.log(this.$route.params.date);
       this.$router.push({name:"expensesEdit", params:{date:this.$route.params.date,id}})

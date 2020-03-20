@@ -10,14 +10,14 @@ const service = axios.create();
 service.defaults.baseURL = process.env.VUE_APP_BASE_API;
 
 
-console.log("token: " + store.state.token);
+// console.log("token: " + store.state.token);
 // service.defaults.headers.common['token'] = store.state.token;
 
 service.interceptors.request.use(
   function(config) {
     //发送请求前做点什么
-    console.log("这是在发送请求之前");
-    console.log(config);
+    // console.log("这是在发送请求之前");
+    // console.log(config);
     config.headers.common["Authorization-Token"] = store.state.token;
     return config;
   },
@@ -31,7 +31,7 @@ service.interceptors.response.use(
     if (response.data && response.data.errCode) {
       if (response.data.errCode === 100) {
         //未登录 tonken无效了
-        console.log("在拦截器中检测到了未登录，跳转");
+        // console.log("在拦截器中检测到了未登录，跳转");
         store.commit("removeToken")  // 重置token
         // MessageBox({
         //     title: '提示',
@@ -39,7 +39,7 @@ service.interceptors.response.use(
         //     showCancelButton: false
         //   });
         MessageBox.confirm("您未登录或者登录已过期，请重新登录,可点击确定进行登录").then(action => {
-          console.log(router);
+          // console.log(router);
           router.replace("/login");
         }).catch(cancel=>{})
         

@@ -15,7 +15,7 @@ import Test from '@/views/TestChart'
 Vue.use(Router)
 
 if (sessionStorage.getItem('token')) {
-  console.log("在路由中获取到了token");
+  // console.log("在路由中获取到了token");
   store.commit('setToken', sessionStorage.getItem('token'))
   }
 

@@ -14,7 +14,7 @@ export default {
   },
   // props: ["chartData", "options"],
   mounted () {
-    console.log("in chartjs mounted");
+    // console.log("in chartjs mounted");
     this.renderChart(this.chartData, this.options)
   }
 }

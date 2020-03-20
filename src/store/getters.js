@@ -14,15 +14,10 @@ const getters = {
     return state.expenses;
   },
   getDate(state) {
-    return dateManager.getDayChinese(state.date)
-    let date = dateManager.getDayChinese(state.date);
-  
-    if(date.slice(0,4) == new Date().getFullYear() + "") 
-      return date.splice(0, 5);
-    else return date;
+    return dateManager.getDayChinese(state.date);
   },
   overviewByDate(state) {
-    console.log("overview");
+    // console.log("overview");
     // console.log(state.date);
     // console.log(state.expenses);
     // console.log(state.expenses.filter((item)=>item["date"]==state.date));
@@ -88,7 +83,7 @@ const getters = {
   getListByCategory: (state, getters) => (date, category) => {
     // console.log(date);
     // console.log(category);
-    console.log(date, category);
+    // console.log(date, category);
     let res = getters.getListByDate(date)[0];
     if (res){
       let list = res.list.filter(item => item.name == category);
@@ -104,7 +99,7 @@ const getters = {
 
     // return res ? res.list.filter(item => item.id == id)[0] : null;
     //深拷贝
-    console.log("深拷贝");
+    // console.log("深拷贝");
     if (res){
       let oneExpense = res.list.filter(item => item.id == id)[0];
       return oneExpense ? JSON.parse(JSON.stringify(oneExpense)) : {id:"temp",amount:0.00,name:"食物",color:"#5AACA0",description:""}

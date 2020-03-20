@@ -50,10 +50,7 @@ export default {
       gapTimes: [] //防止重复增加数据
     };
   },
-  created() {
-    console.log("我被创建了");
-    // this.date = dateManager.getTodayFormat();
-  },
+  
   computed: {
     ...mapGetters(["getDate"]),
     ...mapGetters(["totalAmountByDate"]),
@@ -83,7 +80,7 @@ export default {
       let toDayTime = new Date(dateManager.getTodayFormat()).getTime();
       let gap = toDayTime - newDateTime;
       if (gap != 0 && gap % (3600 * 1000 * 24 * 5) === 0) {
-        console.log("到增加数据的时候了");
+        // console.log("到增加数据的时候了");
         let times = gap / (3600 * 1000 * 24 * 5);
         if (!this.gapTimes.includes(times)) {
           this.gapTimes.push(times);

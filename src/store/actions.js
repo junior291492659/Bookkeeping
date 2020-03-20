@@ -38,10 +38,10 @@ const actions = {
 
   //初始化数据
   loadStore(store) {
-    console.log("在App中初始化数据");
+    // console.log("在App中初始化数据");
     initExpenseFromServer()
       .then(result => {
-        console.log(result.message);
+        // console.log(result.message);
         result.errCode === 0 &&
           store.commit("initStore", JSON.parse(result.record));
       })
@@ -55,12 +55,12 @@ const actions = {
     //payload: times
     getMoreExpenseFromServer({ times: payload })
       .then(result => {
-        console.log(result.message);
+        // console.log(result.message);
         result.errCode === 0 &&
           store.commit("getMoreExpense", JSON.parse(result.record));
       })
       .catch(error => {
-        console.log("in error");
+        // console.log("in error");
         console.log(error);
         console.log(error.response.data.message);
       });
@@ -68,7 +68,7 @@ const actions = {
 
   //添加一项支出
   addOneExpense(store, payload) {
-    console.log("准备添加数据了");
+    // console.log("准备添加数据了");
     addOneExpenseToServer({
       id: payload.expenseData.id,
       date: new Date(payload.date),
@@ -78,7 +78,7 @@ const actions = {
       description: payload.expenseData.description
     })
       .then(result => {
-        console.log("存储成功了");
+        // console.log("存储成功了");
       })
       .catch(error => {
         // console.log(error.response.data.message);
@@ -97,7 +97,7 @@ const actions = {
   changeOneExpense(store, payload) {
     changeOneExpenseToServer(payload)
       .then(result => {
-        console.log("修改成功了");
+        // console.log("修改成功了");
       })
       .catch(error => {
         // console.log(error.response.data.message);
@@ -116,7 +116,7 @@ const actions = {
   removeOneExpense(store, payload) {
     removeOneExpenseToServer(payload)
       .then(result => {
-        console.log("删除成功了");
+        // console.log("删除成功了");
       })
       .catch(error => {
         let message = error.response.data.message
@@ -134,7 +134,7 @@ const actions = {
   addOneCategory(store, payload) {
     addOneCategoryToServer(payload)
       .then(result => {
-        console.log("增加 类别成功了");
+        // console.log("增加 类别成功了");
       })
       .catch(error => {
         // console.log(error.response.data.message);
@@ -153,7 +153,7 @@ const actions = {
   removeOneCategory(store, payload) {
     removeOneCategoryToServer(payload)
       .then(result => {
-        console.log("删除 类别成功了");
+        // console.log("删除 类别成功了");
       })
       .catch(error => {
         // console.log(error.response.data.message);
@@ -172,7 +172,7 @@ const actions = {
   changeOneCategory(store, payload) {
     changeOneCategoryToServer(payload)
       .then(result => {
-        console.log("修改 类别成功了");
+        // console.log("修改 类别成功了");
       })
       .catch(error => {
         // console.log(error.response.data.message);
@@ -191,7 +191,7 @@ const actions = {
   getStatisticsOfTypeByMonth(store, payload) {
     return getStatisticsOfTypeByMonthFromServer(payload)
       .then(result => {
-        console.log("按照月份获取类型数据成功了");
+        // console.log("按照月份获取类型数据成功了");
         // console.log(result);
         return Promise.resolve(result);
       })
@@ -213,7 +213,7 @@ const actions = {
   getStatisticsOfTypeByWeek(store, payload) {
     return getStatisticsOfTypeByWeekFromServer(payload)
       .then(result => {
-        console.log("按照周数获取类型数据成功了");
+        // console.log("按照周数获取类型数据成功了");
         // console.log(result);
         return Promise.resolve(result);
       })
@@ -226,7 +226,7 @@ const actions = {
   getStatisticsOfTypeByYear(store, payload) {
     return getStatisticsOfTypeByYearFromServer(payload)
       .then(result => {
-        console.log("按照年份获取类型数据成功了");
+        // console.log("按照年份获取类型数据成功了");
         // console.log(result);
         return Promise.resolve(result);
       })
@@ -238,7 +238,7 @@ const actions = {
   getStatisticsOfDateByMonth(store, payload){
     return getStatisticsOfDateByMonthFromServer(payload)
         .then(result => {
-          console.log("按照月份获取日期数据成功了");
+          // console.log("按照月份获取日期数据成功了");
           // console.log(result);
           return Promise.resolve(result);
         })
@@ -250,7 +250,7 @@ const actions = {
   getStatisticsOfDateByWeek(store, payload){
     return getStatisticsOfDateByWeekFromServer(payload)
     .then(result => {
-      console.log("按照周数获取日期数据成功了");
+      // console.log("按照周数获取日期数据成功了");
       // console.log(result);
       return Promise.resolve(result);
     })
@@ -262,7 +262,7 @@ const actions = {
   getStatisticsOfDateByYear(store, payload){
     return getStatisticsOfDateByYearFromServer(payload)
     .then(result => {
-      console.log("按照年份获取日期数据成功了");
+      // console.log("按照年份获取日期数据成功了");
       // console.log(result);
       return Promise.resolve(result);
     })
