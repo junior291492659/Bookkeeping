@@ -26,4 +26,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 线上地址
 
-[点我打开(最好切成移动设备观看噢)](129.204.231.203:81)
+129.204.231.203:81
+(最好切成移动设备查看噢)
