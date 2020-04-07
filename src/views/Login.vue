@@ -18,10 +18,10 @@
         class="demo-ruleForm login"
         label-position="left"
       >
-        <el-form-item label="用户名" prop="username">
+        <el-form-item  label="用户名" prop="username">
           <el-input v-model="ruleFormLogin.username"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="loginPass">
+        <el-form-item  label="密码" prop="loginPass">
           <el-input type="password" v-model="ruleFormLogin.loginPass" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item>
@@ -312,6 +312,7 @@ export default {
 .container {
   width: 100%;
   height: 100%;
+  min-width: 300px;
   background: linear-gradient(to top, #ecf0f1, #95a5a6, #bdc3c7, #ecf0f1);
   // background: linear-gradient(to top, #3498db, #2980b9, #3498db);
   display: flex;
@@ -327,6 +328,7 @@ export default {
   .main {
     width: 80%;
     height: 30%;
+    min-width: 250px;
     padding-top: 5rem;
     margin: 0 auto;
   }
