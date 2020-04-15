@@ -104,7 +104,7 @@ export default {
       // this.expenseData.amount = this.amount * 1;
     },
     changeCategory(name, color) {
-      console.log(name, color);
+      // console.log(name, color);
       if (name != "+") {
         this.category.name = name;
         this.category.color = color;
@@ -123,9 +123,9 @@ export default {
       //     this.postData();
       //   }
       // })
-     console.log("in done", this.amount * 1);
+    //  console.log("in done", this.amount * 1);
       this.postData();
-    console.log("in done");
+    // console.log("in done");
       
     },
     postData(){
@@ -138,9 +138,9 @@ export default {
         });
         this.$router.back(-1);
       } else {
-        console.log(dateManager.getDayFormat(this.pickedDate));
-        console.log("in else....");
-        console.log(this.amount * 1);
+        // console.log(dateManager.getDayFormat(this.pickedDate));
+        // console.log("in else....");
+        // console.log(this.amount * 1);
         let expenseData = {
           id: this.createNewId(),
           amount: this.amount * 1,

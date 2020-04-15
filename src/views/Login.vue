@@ -99,6 +99,8 @@
 import { Loading } from "element-ui";
 import { MessageBox } from "mint-ui";
 import { register, login } from "@/api/login";
+import md5 from 'js-md5';
+
 
 export default {
   data() {
@@ -187,11 +189,11 @@ export default {
       });
     },
     submitForm2(formName) {
-      console.log(this.ruleFormLogin.loginPass);
-      console.log(formName);
-      console.log(this.$refs[formName]);
+      // console.log(this.ruleFormLogin.loginPass);
+      // console.log(formName);
+      // console.log(this.$refs[formName]);
       this.$refs[formName].validate(valid => {
-        console.log("在检查。。。");
+        // console.log("在检查。。。");
         if (valid) {
           //提交的数据有效
           if (this.type == "login") {
@@ -219,7 +221,7 @@ export default {
     },
     postLogin() {
       let username = this.ruleFormLogin.username;
-      let password = this.ruleFormLogin.loginPass;
+      let password = md5(md5(this.ruleFormLogin.loginPass));
       console.log(username, password);
       let loading = Loading.service({
         lock: true,
@@ -259,7 +261,7 @@ export default {
     },
     postRegister() {
       let username = this.ruleForm.username;
-      let password = this.ruleForm.pass;
+      let password = md5(md5(this.ruleForm.pass));
       let createdTime = new Date();
       let lastModifiedTime = JSON.parse(JSON.stringify(createdTime));
       // console.log(username);
@@ -272,7 +274,7 @@ export default {
         spinner: "el-icon-loading",
         background: "rgba(0, 0, 0, 0.7)"
       });
-      console.log("after start loading");
+      // console.log("after start loading");
       register({
         username,
         password,
