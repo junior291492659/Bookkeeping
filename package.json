@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "animate.css": "^3.7.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-plugin-component": "^1.1.1",
     "chart.js": "^2.9.3",
     "element-ui": "^2.13.0",
